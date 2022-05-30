@@ -1,6 +1,12 @@
-def timesTwo(num):
-    return num*2
+name = 'This is a global name'
 
-# print(timesTwo(3))
+def greet():
+    # Enclosing function
+    # name = 'Hammad Ali'
+    global name
+    print('this is before global valiable overwrite {}'.format(name))
+    name = "Hammad Ali"
+    print('New variable value {}'.format(name))
 
-print(lambda num: num*2)
+greet()
+print(name)
