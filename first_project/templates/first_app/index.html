@@ -3,12 +3,23 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>template Demo</title>
+    <title>Topic List</title>
     <link rel="stylesheet" href="{% static "css/mystyle.css" %}">
   </head>
   <body>
-    <h1>Welcome to TEMPLATES Lecture</h1>
-    <!-- {{insert_me}} -->
-    <img src="{% static "images/jahanzeb.png" %}" alt="">
+    <h1>List of Topics</h1>
+
+    {% if topic_title %}
+      <table>
+        <th>Topic Name</th>
+        {% for topic in topic_title %}
+          <tr>
+            <td>{{ topic.top_name }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    {% else %}
+      <p>No topic exist</p>
+    {% endif %}
   </body>
 </html>
